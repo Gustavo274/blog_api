@@ -39,7 +39,7 @@ Mais os itens do requirements.txt
     ./manage.py runserver
 ```
 
-**OBS: Após iniciar o servidor, você pode testá-lo tanto pelo Postman, como pela URL: http://127.0.0.1:8000/ usando as views padrões do DRF.**
+**OBS: Após iniciar o servidor, você pode testá-lo tanto pelo Postman, como pela URL: http://127.0.0.1:8000/, onde neste URL haverá uma overview das URLs da API.**
 
 ## Diagrama das Tabelas da aplicação
 
