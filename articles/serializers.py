@@ -23,7 +23,7 @@ class ArticleCreateSerializer(WritableNestedModelSerializer, serializers.ModelSe
     def validate_title(self, v):
         if len(v) > 100:
             return serializers.ValidationError(
-                "Tamanho máximo do título é 120 caracteres."
+                "Tamanho máximo do título é 100 caracteres."
             )
         return v
     
@@ -52,7 +52,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
     def get_url(self, obj):
         return obj.get_api_url()
 
-class ArticleDetailSerializer(serializers.ModelSerializer):
+class ArticleDetailSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
     author = serializers.PrimaryKeyRelatedField(read_only=True)
     comments = serializers.SerializerMethodField(read_only=True)
     keyword = KeywordSerializer(many=True)
